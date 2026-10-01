@@ -1,20 +1,39 @@
 plugins {
     id 'java'
+    id 'org.graalvm.buildtools.native' version '1.1.14'
 }
-
 group = 'gabrielsynapse.java.kiwicompiler'
 version = '1.0-SNAPSHOT'
-
-jar {
-    manifest {
-        attributes 'Main-Class': "${project.group}.Main"
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
+graalvmNative {
+    binaries {
+        main {
+            imageName = 'kiwi' // Nome do arquivo executável gerado
+            mainClass = "${project.group}.Main" // Classe principal
+
+            // Ativa otimizações rápidas durante o desenvolvimento
+            quickBuild = true
+        }
+    }
+    // Ativa a detecção automática de instalações GraalVM via Gradle Toolchain
+    toolchainDetection = true
+    metadataRepository {
+        enabled = true
+    }
+}
+
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation 'com.google.code.gson:gson:2.14.0'
+    implementation 'org.springframework:spring-core:6.1.13'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

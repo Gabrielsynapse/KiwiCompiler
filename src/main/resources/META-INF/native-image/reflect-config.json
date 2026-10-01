@@ -1,0 +1,33 @@
+[
+  {
+    "name": "gabrielsynapse.java.kiwicompiler.KiwiConfig",
+    "allDeclaredFields": true,
+    "allPublicFields": true,
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true
+  },
+  {
+    "name": "gabrielsynapse.java.kiwicompiler.LoaderType",
+    "allDeclaredFields": true,
+    "allPublicFields": true
+  },
+  {
+    "name": "gabrielsynapse.java.kiwicompiler.Environment",
+    "allDeclaredFields": true,
+    "allPublicFields": true
+  },
+  {
+    "name": "java.util.HashMap",
+    "allDeclaredFields": true,
+    "allPublicFields": true,
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true
+  },
+  {
+    "name": "java.lang.String",
+    "allDeclaredFields": true,
+    "allPublicFields": true,
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true
+  }
+]
